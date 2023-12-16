@@ -1,3 +1,5 @@
+import { IProduct } from "@/types/order";
+
 // function to open a link in a new tab
 export const openLink = (link: string) => window.open(link, "_blank");
 
@@ -73,3 +75,9 @@ export const omitKeys = (obj: any, keys: string[]) => {
 // function to round off a number to given decimal places
 export const roundOff = (num: number, decimalPlaces: number) =>
 	Math.round(num * 10 ** decimalPlaces) / 10 ** decimalPlaces;
+
+export const getTotalPrice = (products: IProduct[]) =>
+	roundOff(
+		products.reduce((a, b) => a + b.price * b.quantity, 0),
+		2
+	);

@@ -32,10 +32,11 @@ const Col: React.FC<IResponsiveCol> = ({
 	sm = 100,
 	xsm = 100,
 	children,
+	className = "",
 	...rest
 }) => (
 	<div
-		className={`col-xlg-${xlg} col-lg-${lg} col-md-${md} col-sm-${sm} col-xsm-${xsm}`}
+		className={`col-xlg-${xlg} col-lg-${lg} col-md-${md} col-sm-${sm} col-xsm-${xsm} ${className}`}
 		{...rest}
 	>
 		{children}
